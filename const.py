@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import scipy.constants 
 import math
+import scipy.constants
 
 #1モル当たりの質量（kg）
 UNITM = (1.6605e-27)*scipy.constants.Avogadro
@@ -12,7 +12,7 @@ NSP = 108
 EPS = 119.8
 #J/MOL の　何か
 EPSIL = EPS*scipy.constants.Boltzmann*scipy.constants.Avogadro
-#シグマ、長さの単位(m)
+#シグマ,長さの単位(m)
 SIGMA = 0.3405**(-9)
 #原子量
 TMASS = 39.9
@@ -58,7 +58,7 @@ TSCALE = False
 NLSAVE = True
 
 
-#面心立方構造の単位格子を用意し、xyzの方向にnfcc個重ねる
+#面心立方構造の単位格子を用意しxyzの方向にnfcc個重ねる
 NFCC = (NSP/4.0)**(1.0/3.0)+0.001
 #格子定数 in units of cell width
 A = 2.0/NFCC
@@ -72,17 +72,17 @@ RUNIT = HCELL
 SIGMAD = SIGMA/RUNIT
 #密度
 DENSE = NSP/CELLSZ
-#dense の　d単位
+#denseのd単位
 DENSED = float(NSP)/CELLSZ**3*RUNIT**3
 #時間の単位(rのunit)
 TIMEO = RUNIT*math.sqrt(GMASS/EPSIL)
 #時間の単位(lj)
 TIMELJ = TIMEO/RUNIT*SIGMA
-#dt の　TIMEO単位
+#dtのTIMEO単位
 DTD = DTSECD/TIMEO
 
 
-#0.5では
+#1.5では
 EKMASS = 0.5*GMASS*(RUNIT/TIMEO)**2/EPSIL
 #
 EPS12 = 4.0*SIGMAD**12
