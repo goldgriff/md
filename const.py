@@ -85,15 +85,15 @@ DTD = DTSECD/TIMEO
 #1.5では
 EKMASS = 0.5*GMASS*(RUNIT/TIMEO)**2/EPSIL
 #
-EPS12 = 4.0*SIGMAD**12
+EPS12 =SIGMAD**12
 #
-EPS6 = 4.0*SIGMAD**6
+EPS6 = SIGMAD**6
 
 ##correction term per a particle##
 #
-ECRR = 4.*scipy.constants.pi*DENSED*(EPS12/9.-EPS6/3.)
+ECRR = 4.*scipy.constants.pi*DENSED*(EPS12/9.-EPS6/3.)*4. #EPS12を修正したため末尾に4をかけた
 #
-VIRCRR = 4.*scipy.constants.pi*DENSED*(4.*EPS12/3.-2*EPS6)/6.
+VIRCRR = 4.*scipy.constants.pi*DENSED*(4.*EPS12/3.-2*EPS6)/6.*4.
 
 
 #
