@@ -59,7 +59,7 @@ NLSAVE = True
 
 
 #面心立方構造の単位格子を用意しxyzの方向にnfcc個重ねる
-NFCC = (NSP/4.0)**(1.0/3.0)+0.001
+NFCC = (NSP/4.0)**(1.0/3.0)-0.001
 #格子定数 in units of cell width
 A = 2.0/NFCC
 #cellsize
@@ -83,7 +83,7 @@ DTD = DTSECD/TIMEO
 
 
 #1.5では
-EKMASS = 0.5*GMASS*(RUNIT/TIMEO)**2/EPSIL
+EKMASS = GMASS*(RUNIT/TIMEO)**2/EPSIL
 #
 EPS12 =SIGMAD**12
 #
