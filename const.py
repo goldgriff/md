@@ -23,7 +23,7 @@ DT = 0.01
 #s単位
 DTSECD = DT*10**(-12)
 #ステップ数
-NSTEP = 10
+NSTEP = 10000
 
 
 #直径1シグマの球の体積*Avogadro(m**3/mol)
@@ -37,7 +37,8 @@ VS = SIGMA**3*scipy.constants.Avogadro
 
 
 #使う体積
-VOLUME = VS/0.75
+#VOLUME = VS/0.75
+VOLUME = VS/7500
 #体積/長方形
 VSIGMA = VOLUME/VS
 #密度(sigma**-3)
@@ -57,9 +58,11 @@ TSCALE = False
 #non-save x and vx
 NLSAVE = True
 
+NTSCALE = 2
+
 
 #面心立方構造の単位格子を用意しxyzの方向にnfcc個重ねる
-NFCC = (NSP/4.0)**(1.0/3.0)-0.001
+NFCC = int((NSP/4.0)**(1.0/3.0)+0.001)
 #格子定数 in units of cell width
 A = 2.0/NFCC
 #cellsize
